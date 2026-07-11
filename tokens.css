@@ -1,0 +1,20 @@
+/* IQ Crew design tokens v1 — from Brand Book v1.1 §03–04 */
+:root {
+  --paper: #FAF7F1;        /* background */
+  --ink: #1C201E;          /* text — 15:1 on paper */
+  --euc: #3F6C58;          /* accents, lines — 5.6:1 on paper (AA) */
+  --euc-deep: #2C5243;     /* buttons, the mark */
+  --sand: #D8C4A4;         /* fills only, never text */
+  --tint: #E7EDE6;         /* section fills */
+  --record: #D9531E;       /* THE STAMP ONLY */
+  --line: #E4DED2;         /* rules, borders */
+
+  /* portal (dark) — apps/portal only */
+  --p-ink: #151815; --p-surface: #1E2420; --p-text: #EDEBE3;
+  --p-euc: #7CAE95; --p-line: #2C332E;
+
+  --font-sans: 'General Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+/* Type scale: display 44–56px/-0.028em/1.05 · heading 26–32px/-0.02em
+   body 15–17px/1.6 max 70ch · mono 11–13px, tabular numerals */
