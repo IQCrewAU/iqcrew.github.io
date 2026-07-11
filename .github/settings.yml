@@ -1,0 +1,43 @@
+# GitHub Settings App configuration for iqcrew.github.io
+# Aligned with IQ Crew AU Org governance doctrine v1.1
+
+repository:
+  # General settings
+  name: iqcrew.github.io
+  description: "IQ Crew AU — Official Brand Book v1.1 and Asset Kit Platform"
+  homepage: "https://iqcrew.com.au"
+  topics:
+    - brand-book
+    - asset-kit
+    - design-system
+    - github-pages
+    - eucalypt
+  private: false
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_downloads: false
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: true
+  delete_branch_on_merge: true
+  enable_automated_security_fixes: true
+  enable_vulnerability_alerts: true
+
+branches:
+  - name: main
+    # Enforce rules on the main branch
+    # Note: As this is a PUBLIC repository, branch protections are fully supported on GitHub Free.
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        required_signatures: true
+      required_status_checks:
+        strict: true
+        contexts: [] # No CI checks configured on Pull Requests yet
+      enforce_admins: true
+      required_linear_history: true
+      allow_force_pushes: false
+      allow_deletions: false
