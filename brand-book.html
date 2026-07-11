@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IQ Crew — Brand Book v1.1</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF7F1; --ink:#1C201E; --euc:#3F6C58; --euc-deep:#2C5243;
+    --sand:#D8C4A4; --tint:#E7EDE6; --record:#D9531E; --line:#E4DED2;
+    --muted:#5A625D;
+    /* portal (dark) variant */
+    --p-ink:#151815; --p-surface:#1E2420; --p-text:#EDEBE3; --p-euc:#7CAE95; --p-line:#2C332E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'General Sans',system-ui,-apple-system,sans-serif;line-height:1.6}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px}
+  a{color:var(--euc-deep)}
+  ::selection{background:var(--tint);color:var(--euc-deep)}
+
+  /* cover */
+  .cover{padding:88px 0 64px;border-bottom:1px solid var(--line)}
+  .cover-mark{display:flex;align-items:center;gap:14px;font-weight:700;font-size:26px;letter-spacing:-0.02em}
+  .mgram{width:52px;height:52px;border-radius:13px;background:var(--euc-deep);color:var(--paper);display:grid;place-items:center;font-size:22px;font-weight:700}
+  .cover h1{margin-top:44px;font-size:52px;line-height:1.04;letter-spacing:-0.028em;font-weight:700;max-width:760px}
+  .cover h1 em{font-style:normal;color:var(--euc-deep)}
+  .cover p{margin-top:20px;font-size:17px;max-width:640px;color:#333B36}
+  .cover .meta{margin-top:34px;font-size:12px;color:var(--muted);letter-spacing:.02em}
+  .stamp{display:inline-grid;place-items:center;width:96px;height:96px;border:3px solid var(--record);border-radius:50%;transform:rotate(-9deg);color:var(--record);font-weight:700;font-size:14px;line-height:1.25;text-align:center}
+  .cover-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+
+  /* sections */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .kicker{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--euc)}
+  h2{margin-top:10px;font-size:30px;letter-spacing:-0.02em;font-weight:700}
+  h3{margin-top:34px;font-size:18px;font-weight:600}
+  .lede{margin-top:12px;font-size:16px;max-width:700px;color:#333B36}
+  p{max-width:700px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+
+  table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+  th{text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:8px 10px;border-bottom:2px solid var(--ink)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .num{font-family:'JetBrains Mono',monospace;font-size:12.5px}
+
+  .chip{display:inline-block;width:100%;height:56px;border-radius:9px;border:1px solid var(--line)}
+  .tok{font-size:12.5px;margin-top:6px}
+  .tok b{display:block;font-size:13px}
+  .pal{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:14px}
+
+  .rule-list{list-style:none;margin-top:12px;max-width:760px}
+  .rule-list li{padding:9px 0 9px 26px;position:relative;border-bottom:1px dashed var(--line);font-size:14.5px}
+  .rule-list li::before{content:"—";position:absolute;left:0;color:var(--euc)}
+  .rule-list li.ban::before{content:"✕";color:var(--record);font-weight:700}
+  .rule-list li.keep::before{content:"✓";color:var(--euc-deep);font-weight:700}
+
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:14px}
+  @media(max-width:820px){.dd{grid-template-columns:1fr}}
+  .dd>div{padding:16px 18px;font-size:14px}
+  .dd .no{background:#F4EFE6;border-right:1px solid var(--line)}
+  .dd .no h4,.dd .yes h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  .dd .no h4{color:var(--record)} .dd .yes h4{color:var(--euc-deep)}
+  .dd .yes{background:var(--tint)}
+
+  /* receipt device */
+  details.receipt{border:1px solid var(--line);border-radius:12px;background:#fff;max-width:700px;margin-top:14px}
+  details.receipt summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:15px 18px;font-size:15.5px;font-weight:600}
+  details.receipt summary::-webkit-details-marker{display:none}
+  .rtag{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--euc);border:1px solid var(--euc);border-radius:999px;padding:3px 10px;white-space:nowrap}
+  details[open].receipt .rtag{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--paper)}
+  .rbody{border-top:1px dashed var(--line);padding:14px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.75;color:#3A423D;background:var(--paper);border-radius:0 0 12px 12px}
+
+  .motif{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px}
+
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px}
+  .btn{background:var(--euc-deep);color:var(--paper);padding:12px 19px;border-radius:10px;font-weight:600;font-size:14.5px;text-decoration:none;border:1.5px solid var(--euc-deep)}
+  .btn:focus-visible{outline:3px solid var(--sand);outline-offset:2px}
+  .btn2{color:var(--ink);background:transparent;border:1.5px solid var(--ink);padding:12px 19px;border-radius:10px;font-weight:600;font-size:14.5px;text-decoration:none}
+  .btn3{color:var(--euc-deep);text-decoration:none;font-weight:600;font-size:14.5px;padding:12px 4px}
+  .field{max-width:380px;margin-top:14px}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+  .field input{width:100%;padding:11px 13px;border:1.5px solid #C9CFC9;border-radius:9px;background:#fff;font:inherit;font-size:14.5px}
+  .field input:focus{outline:none;border-color:var(--euc-deep);box-shadow:0 0 0 3px var(--tint)}
+  .field .hint{font-size:12px;color:var(--muted);margin-top:5px}
+
+  .portal{background:var(--p-ink);color:var(--p-text);border-radius:12px;padding:22px;margin-top:14px}
+  .portal .k{color:var(--p-euc);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+  .portal table{font-size:13px}
+  .portal th{color:#9AA69E;border-bottom-color:var(--p-line)}
+  .portal td{border-bottom-color:var(--p-line)}
+
+  .colophon{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:#fff;max-width:700px;font-size:13px;margin-top:14px}
+  .colophon .mono{font-size:11.5px;color:var(--muted)}
+
+  .tl{padding:9px 0;border-bottom:1px dashed var(--line);display:flex;gap:16px;align-items:baseline;max-width:760px}
+  .tl:last-child{border-bottom:none}
+  .tl .t{font-size:16.5px;font-weight:600;letter-spacing:-0.01em}
+  .tl .u{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-align:right}
+
+  footer{padding:44px 0 80px;font-size:13px;color:var(--muted)}
+  @media print{ body{background:#fff} .stamp{transform:rotate(-9deg)} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ==================== COVER ==================== -->
+  <div class="cover">
+    <div class="cover-row">
+      <div>
+        <div class="cover-mark"><span class="mgram">iq</span>IQ Crew</div>
+        <h1>Extend your team, <em>not your risk.</em></h1>
+        <p>IQ Crew is the only Australian MSP purpose-built to make offshore teams safe for regulated firms. This book governs how that idea looks, sounds, and behaves — in the site, the portal, the Scorecard, and every document that carries the mark.</p>
+        <div class="meta mono">BRAND BOOK v1.1 · RATIFIED 10 JULY 2026 · SYSTEM: EUCALYPT + THE STAMP · GOVERNS ALL PUBLIC ARTEFACTS</div>
+      </div>
+      <div class="stamp" aria-label="On the record stamp">ON THE<br>RECORD</div>
+    </div>
+  </div>
+
+  <!-- ==================== 01 FOUNDATIONS ==================== -->
+  <section id="foundations">
+    <div class="kicker">01 — Foundations</div>
+    <h2>Who we are, in a table you can enforce</h2>
+    <p class="lede">Voice is constant; tone flexes by context (§05). When any piece of work drifts, this table is the tiebreaker.</p>
+    <table>
+      <tr><th style="width:50%">We are</th><th>We are not</th></tr>
+      <tr><td><strong>Rigorous</strong> — every claim has a mechanism behind it</td><td>Pedantic — we don't bury owners in acronyms</td></tr>
+      <tr><td><strong>Straight-talking</strong> — prices published, limits stated</td><td>Blunt or salesy — candour isn't a pitch trick</td></tr>
+      <tr><td><strong>Calm</strong> — risk named once, then capability</td><td>Alarmist — fear is a competitor's tool, never ours</td></tr>
+      <tr><td><strong>Warm</strong> — a crew, run properly</td><td>Matey — no slang, no exclamation marks</td></tr>
+      <tr><td><strong>Evidence-led</strong> — receipts one click deep</td><td>Boastful — no superlatives, no "world-class"</td></tr>
+      <tr><td><strong>Australian</strong> — spelling, idiom, hosting, standards</td><td>Nationalistic — sovereignty is engineering, not flag-waving</td></tr>
+    </table>
+  </section>
+
+  <!-- ==================== 02 LOGO & STAMP ==================== -->
+  <section id="mark">
+    <div class="kicker">02 — The mark &amp; the stamp</div>
+    <h2>One quiet mark. One loud stamp.</h2>
+    <div class="grid2" style="margin-top:18px">
+      <div>
+        <h3 style="margin-top:0">The mark</h3>
+        <div class="motif" style="display:flex;align-items:center;gap:16px">
+          <span class="mgram" style="width:64px;height:64px;border-radius:16px;font-size:26px">iq</span>
+          <div style="font-weight:700;font-size:30px;letter-spacing:-0.02em">IQ Crew</div>
+        </div>
+        <ul class="rule-list">
+          <li>Lowercase monogram in a rounded square (radius = 25% of side). Eucalypt Deep on Paper, or Paper on Eucalypt Deep. Mono (single-colour) versions in Ink, plus a Paper reverse for dark surfaces; in both, the letterforms knock out to transparent.</li>
+          <li>Clearspace: the height of the "i" on all sides. Minimum size: 24&nbsp;px monogram, 90&nbsp;px full lockup. Ready-made files for every context ship in Asset Kit v1 (logos, social, email, favicon, stamp).</li>
+          <li class="ban">Never gradients, shadows, outlines, or recolouring. Never on photography. Never animated.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0">The stamp — adopted from Direction 02</h3>
+        <div class="motif" style="display:flex;align-items:center;gap:22px">
+          <span class="stamp" style="width:84px;height:84px;font-size:12.5px">ON THE<br>RECORD</span>
+          <div style="font-size:13.5px;color:#3A423D">A verification device, not a decoration. It certifies that the artefact it sits on is evidenced.</div>
+        </div>
+        <ul class="rule-list">
+          <li><strong>Where it may appear:</strong> Scorecard reports, assessment deliverables, published case studies, the Trust Centre, and evidence packs. Nowhere else.</li>
+          <li><strong>Rotation −6° to −12°, never 0°.</strong> A straight stamp is a badge; a tilted stamp was pressed by a hand.</li>
+          <li><strong>Record Red #D9531E lives only inside the stamp.</strong> It appears nowhere else in the system — the quarantine is what keeps it meaning "verified".</li>
+          <li class="ban">Never on the homepage hero, ads, or anything unverified. A stamp on marketing fluff kills the device permanently.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 03 COLOUR ==================== -->
+  <section id="colour">
+    <div class="kicker">03 — Colour</div>
+    <h2>Paper dominates. Green is structural. Red is quarantined.</h2>
+    <p class="lede">Target ratio on any page: ~70% Paper, ~15% Tint/Sandstone fills, ~10% Ink text, ~5% Eucalypt. If a page feels green, it's wrong.</p>
+    <div class="pal">
+      <div><span class="chip" style="background:#FAF7F1"></span><div class="tok"><b>Paper</b><span class="mono">#FAF7F1 · bg</span></div></div>
+      <div><span class="chip" style="background:#1C201E"></span><div class="tok"><b>Ink</b><span class="mono">#1C201E · text · 15:1 AA+</span></div></div>
+      <div><span class="chip" style="background:#3F6C58"></span><div class="tok"><b>Eucalypt</b><span class="mono">#3F6C58 · accents · 5.6:1 AA</span></div></div>
+      <div><span class="chip" style="background:#2C5243"></span><div class="tok"><b>Eucalypt Deep</b><span class="mono">#2C5243 · buttons/mark</span></div></div>
+      <div><span class="chip" style="background:#D8C4A4"></span><div class="tok"><b>Sandstone</b><span class="mono">#D8C4A4 · fills only, never text</span></div></div>
+      <div><span class="chip" style="background:#E7EDE6"></span><div class="tok"><b>Sage Tint</b><span class="mono">#E7EDE6 · section fills</span></div></div>
+      <div><span class="chip" style="background:#D9531E"></span><div class="tok"><b>Record Red</b><span class="mono">#D9531E · stamp only</span></div></div>
+      <div><span class="chip" style="background:#E4DED2"></span><div class="tok"><b>Line</b><span class="mono">#E4DED2 · rules/borders</span></div></div>
+    </div>
+
+    <h3>Portal (dark) variant</h3>
+    <div class="portal">
+      <div class="k">apps/portal only — the marketing site is light, always</div>
+      <table>
+        <tr><th>Token</th><th>Value</th><th>Use</th></tr>
+        <tr><td>Portal Ink</td><td class="num">#151815</td><td>background</td></tr>
+        <tr><td>Surface</td><td class="num">#1E2420</td><td>panels, cards</td></tr>
+        <tr><td>Text</td><td class="num">#EDEBE3</td><td>body · 13:1 AA+</td></tr>
+        <tr><td>Eucalypt Bright</td><td class="num">#7CAE95</td><td>accents, states · 6.4:1 AA</td></tr>
+        <tr><td>Line</td><td class="num">#2C332E</td><td>rules</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== 04 TYPE ==================== -->
+  <section id="type">
+    <div class="kicker">04 — Typography</div>
+    <h2>General Sans speaks. Mono keeps the receipts.</h2>
+    <table>
+      <tr><th>Role</th><th>Spec</th><th>Notes</th></tr>
+      <tr><td>Display</td><td class="num">General Sans 700 · 44–56px · −0.028em · lh 1.05</td><td>Sentence case. One display line per screen.</td></tr>
+      <tr><td>Heading</td><td class="num">General Sans 700 · 26–32px · −0.02em</td><td>Sentence case, never Title Case.</td></tr>
+      <tr><td>Body</td><td class="num">General Sans 500 · 15–17px · lh 1.6</td><td>Max measure 70ch.</td></tr>
+      <tr><td>Receipts / labels / figures</td><td class="num">JetBrains Mono 400–500 · 11–13px</td><td>Tabular numerals. All evidence lines, timestamps, region names, ABN.</td></tr>
+    </table>
+    <ul class="rule-list">
+      <li class="keep">Australian English everywhere — organise, colour, licence (noun). Real apostrophes and quotes (’ “ ”), en dashes with spaces for asides, non-breaking space before units.</li>
+      <li class="keep">Numbers that matter are mono and exact: <span class="mono">australiaeast</span>, <span class="mono">ABN 52 697 849 522</span>, <span class="mono">$4,000/mo minimum</span>.</li>
+      <li class="ban">No Title Case Headings, no ALL CAPS body, no exclamation marks, no emoji — anywhere, ever, including LinkedIn.</li>
+      <li class="keep">Production self-hosts all font files (Fontshare download + JetBrains Mono OFL). No font CDN calls on the live site — faster, private, on-story.</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 05 VOICE ==================== -->
+  <section id="voice">
+    <div class="kicker">05 — Voice &amp; tone</div>
+    <h2>Say the mechanism, not the vibe</h2>
+    <p class="lede">Voice constants: the §01 table. Tone flexes by context:</p>
+    <table>
+      <tr><th>Context</th><th>Formality</th><th>Energy</th><th>Technical depth</th><th>Sounds like</th></tr>
+      <tr><td>Homepage</td><td>Medium</td><td>Medium</td><td>Low, receipts 1 click deep</td><td>"Your offshore team works inside your controls."</td></tr>
+      <tr><td>Trust Centre</td><td>High</td><td>Low</td><td>High</td><td>"Region restriction is enforced by Azure Policy at deployment."</td></tr>
+      <tr><td>Scorecard report</td><td>High</td><td>Low</td><td>Medium</td><td>"MFA was not enforced on 3 of 11 accounts we checked."</td></tr>
+      <tr><td>LinkedIn (Kyle)</td><td>Low</td><td>High</td><td>Low–medium</td><td>"Most firms couldn't tell you what their offshore staff logged into last Tuesday. Yours can."</td></tr>
+      <tr><td>Proposals / SOW</td><td>High</td><td>Low</td><td>High</td><td>Plain clauses, defined terms, no adjectives.</td></tr>
+      <tr><td>Errors / empty states</td><td>Medium</td><td>Low</td><td>Low</td><td>"That didn't send. Check the email address and try again."</td></tr>
+    </table>
+
+    <h3>Rewrites — the fastest way to learn the voice</h3>
+    <div class="dd">
+      <div class="no"><h4>Never</h4>Unlock seamless offshore productivity with cutting-edge, world-class security solutions.</div>
+      <div class="yes"><h4>Always</h4>Your offshore team gets managed laptops, locked-down accounts, and a desktop that lives in Sydney.</div>
+    </div>
+    <div class="dd">
+      <div class="no"><h4>Never</h4>We take security seriously. Your peace of mind is our top priority!</div>
+      <div class="yes"><h4>Always</h4>MFA on every account. Application control on every machine. Every session logged.</div>
+    </div>
+    <div class="dd">
+      <div class="no"><h4>Never</h4>Trusted by industry leaders across Australia.</div>
+      <div class="yes"><h4>Always</h4>Client zero was our own mortgage brokerage. It still runs on exactly what we sell.</div>
+    </div>
+    <div class="dd">
+      <div class="no"><h4>Never</h4>Submit · Learn more · Get started today!</div>
+      <div class="yes"><h4>Always</h4>Get your Scorecard · See how it works · Book a call</div>
+    </div>
+
+    <h3>Word lists</h3>
+    <ul class="rule-list">
+      <li class="keep"><strong>Owned:</strong> control, visibility, hardened, standards, evidence, on the record, dedicated, properly run.</li>
+      <li class="ban"><strong>Banned:</strong> solutions, synergy, cyber (standalone noun), world-class, cutting-edge, best-in-class, seamless, unlock, empower, leverage, peace of mind, military-grade, guaranteed, revolutionary, game-changing.</li>
+      <li>"Sovereign" appears only on the Trust Centre and technical pages — never in headlines.</li>
+      <li>Every public claim must exist in the Claims Register at PRINT NOW status. No register row, no sentence.</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 06 SIGNATURE DEVICES ==================== -->
+  <section id="devices">
+    <div class="kicker">06 — Signature devices</div>
+    <h2>Three things only we do</h2>
+
+    <h3 style="margin-top:22px">1 · The boundary motif</h3>
+    <p style="font-size:14.5px">All illustration derives from the real architecture: a person outside, a bordered dedicated environment inside, a governed path between. Drawn in Eucalypt line-work on Paper or Tint. Labels stay country-generic ("your offshore team"). No other illustration style exists — no 3D renders, no flat-people scenes, no icons-as-decoration.</p>
+
+    <h3>2 · The receipt</h3>
+    <p style="font-size:14.5px">The voice slider "technical receipts one click deep" made literal. Any claim on the site can open into its mechanism. This is the site's defining interaction — try it:</p>
+    <details class="receipt">
+      <summary>Every client runs in their own dedicated Microsoft Azure tenant.<span class="rtag">RECEIPT</span></summary>
+      <div class="rbody">MECHANISM&nbsp;&nbsp;— tenant provisioned per client at onboarding; no shared subscriptions<br>ENFORCED&nbsp;&nbsp;&nbsp;— isolation boundary set at deployment; cannot be disabled per-user<br>VERIFIED&nbsp;&nbsp;&nbsp;— automated audit, monthly · evidence pack available under NDA<br>REGISTER&nbsp;&nbsp;&nbsp;— claim A2 · status PRINT NOW</div>
+    </details>
+    <details class="receipt">
+      <summary>Client environments are deployed exclusively to Australian Azure regions.<span class="rtag">RECEIPT</span></summary>
+      <div class="rbody">MECHANISM&nbsp;&nbsp;— region allow-list: Australian regions only<br>ENFORCED&nbsp;&nbsp;&nbsp;— Azure Policy at deployment; non-Australian regions are denied, not discouraged<br>VERIFIED&nbsp;&nbsp;&nbsp;— continuous policy compliance scan<br>SCOPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— platform metadata handled per Microsoft; see Trust Centre scope note · claim A3</div>
+    </details>
+    <ul class="rule-list">
+      <li><strong>Receipt content rules:</strong> mechanism, enforcement point, verification cadence, register row. In mono, under 5 lines, sentence fragments.</li>
+      <li class="ban">Receipts never expose internals — no script names, file paths, repo names, vendor product names, or infrastructure identifiers. Disclosure discipline is part of the security posture.</li>
+      <li>A claim that can't produce a receipt doesn't go on the site. The device polices the copy.</li>
+    </ul>
+
+    <h3>3 · The stamp</h3>
+    <p style="font-size:14.5px">Rules in §02. The stamp is the receipt's big sibling: receipts explain claims; the stamp certifies whole artefacts.</p>
+  </section>
+
+  <!-- ==================== 07 TAGLINES ==================== -->
+  <section id="taglines">
+    <div class="kicker">07 — Taglines (kept in full, ratified)</div>
+    <h2>One master line, eleven workers</h2>
+    <div style="margin-top:16px">
+      <div class="tl"><span class="t">Extend your team, not your risk.</span><span class="u">MASTER · hero · everywhere</span></div>
+      <div class="tl"><span class="t">Offshore capability. Onshore control.</span><span class="u">decks · one-pagers</span></div>
+      <div class="tl"><span class="t">Your people offshore. Your data onshore.</span><span class="u">Trust Centre · ads</span></div>
+      <div class="tl"><span class="t">Grow the crew. Keep the controls.</span><span class="u">LinkedIn · social</span></div>
+      <div class="tl"><span class="t">The safe way to staff offshore.</span><span class="u">referral partners · plain-English intro</span></div>
+      <div class="tl"><span class="t">More capability, not more exposure.</span><span class="u">email subject lines</span></div>
+      <div class="tl"><span class="t">Your offshore team, properly run.</span><span class="u">How-it-works header</span></div>
+      <div class="tl"><span class="t">Offshore staff, on the record.</span><span class="u">monitoring section · pairs with the stamp</span></div>
+      <div class="tl"><span class="t">Every seat secured.</span><span class="u">pricing page</span></div>
+      <div class="tl"><span class="t">Built like it's audited. Because it is.</span><span class="u">Trust Centre</span></div>
+      <div class="tl"><span class="t">Global team. Australian standards.</span><span class="u">About page</span></div>
+      <div class="tl"><span class="t">Add people, not attack surface.</span><span class="u">technical audiences · Justyn's pieces</span></div>
+    </div>
+  </section>
+
+  <!-- ==================== 08 DESIGN DOCTRINE ==================== -->
+  <section id="doctrine">
+    <div class="kicker">08 — Design doctrine</div>
+    <h2>Built by hand: how this site refuses to look generated</h2>
+    <p class="lede">Sites read as AI-made because they're assembled from defaults. The counter isn't more decoration — it's fewer defaults, real content, and one idea executed with unusual discipline. These rules are hard constraints for the build; the CLAUDE.md will carry them verbatim.</p>
+
+    <h3>Named tells — banned outright</h3>
+    <ul class="rule-list">
+      <li class="ban">The three-feature-card row with rounded icon chips. Features are told as prose sections with boundary-motif diagrams and receipts.</li>
+      <li class="ban">Centred hero over a gradient blob or mesh. Our hero is left-set on the asymmetric grid with the data-path drawing.</li>
+      <li class="ban">Terracotta/warm-clay accents (the #D97757 family) — the single most recognisable AI-design colour. Nothing in our palette approaches it; Record Red is quarantined to the stamp.</li>
+      <li class="ban">Glassmorphism, purple gradients, floating 3D shapes, dark-mode-with-acid-green.</li>
+      <li class="ban">Fake proof: logo walls, "trusted by 10,000+", invented testimonials, counters animating to made-up numbers. Our proof is CFC, receipts, and published pricing.</li>
+      <li class="ban">Scroll-triggered fade-up on every section. Testimonial carousels. Emoji. Generic icon sets as decoration.</li>
+      <li class="ban">Card-grid-with-shadow as the default layout unit. Every section earns a bespoke structure.</li>
+      <li class="ban">Copy that never commits — no prices, no names, no numbers. We publish the price, name the client, state the region.</li>
+    </ul>
+
+    <h3>The replacement grammar</h3>
+    <ul class="rule-list">
+      <li class="keep"><strong>Asymmetric by default:</strong> 7/5 and 8/4 column splits; text blocks hang off a consistent left axis; whitespace is a material, not a gap.</li>
+      <li class="keep"><strong>Receipts as rhythm:</strong> the claim→receipt device recurs down the page, so the site's texture is itself the proof argument.</li>
+      <li class="keep"><strong>Honest tables:</strong> pricing is a real table with real numbers, mono figures, and the minimum stated plainly. Tables are a feature of the voice, not a failure of imagination.</li>
+      <li class="keep"><strong>One orchestrated moment:</strong> on load, the hero data-path draws itself once (~900&nbsp;ms, SVG stroke). Receipts expand. Hover states shift ≤150&nbsp;ms. Nothing else moves. <span class="mono">prefers-reduced-motion</span> disables the draw.</li>
+      <li class="keep"><strong>Real specificity everywhere:</strong> <span class="mono">australiaeast</span> not "the cloud"; "one business day" not "24/7 world-class support"; "3 of 11 accounts" not "several issues".</li>
+      <li class="keep"><strong>The idiosyncrasy budget is spent:</strong> the tilted stamp and the quarantined red are the system's two deliberate oddities. Nothing else gets to be weird.</li>
+    </ul>
+
+    <h3>Honesty devices</h3>
+    <p style="font-size:14.5px">The site practises what the company sells — it keeps its own receipts. Every page ends in a colophon:</p>
+    <div class="colophon">
+      <strong>IQ Crew Pty Ltd</strong> · <span class="mono">ABN 52 697 849 522</span><br>
+      <span class="mono">THIS SITE, ON THE RECORD — hosted in Australia [ships only after Azure cutover · register B4] · no tracking cookies · privacy-first analytics · fonts self-hosted · last updated {date}</span><br>
+      <span style="font-size:12px;color:var(--muted)">Privacy · Terms · Trust Centre</span>
+    </div>
+
+    <h3>Craft floor — invisible until it's missing</h3>
+    <ul class="rule-list">
+      <li class="keep">Designed <span class="mono">:focus-visible</span> states (sandstone ring), set <span class="mono">::selection</span> colour, real 404 and empty states written in voice, print stylesheet for the Scorecard, monogram favicon at 16/32/180.</li>
+      <li class="keep">WCAG 2.1 AA verified per component; keyboard path through every flow; touch targets ≥44px.</li>
+      <li class="keep">Performance as brand: system renders fast because it's mostly type, lines and one SVG — target Lighthouse ≥95 on 4G. A slow "security" site is an oxymoron.</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 09 APPLICATION ==================== -->
+  <section id="application">
+    <div class="kicker">09 — Application snapshots</div>
+    <h2>The system at component scale</h2>
+    <div class="btnrow">
+      <a class="btn" href="#application">Get your Scorecard</a>
+      <a class="btn2" href="#application">Book a call</a>
+      <a class="btn3" href="#application">See how it works →</a>
+    </div>
+    <div class="field">
+      <label for="em">Work email</label>
+      <input id="em" type="email" placeholder="name@yourfirm.com.au">
+      <div class="hint">Used once, to send your Scorecard. Nothing else.</div>
+    </div>
+  </section>
+
+  <!-- ==================== 10 GOVERNANCE ==================== -->
+  <section id="governance" style="border-bottom:none">
+    <div class="kicker">10 — Governance</div>
+    <h2>How this book stays true</h2>
+    <ul class="rule-list">
+      <li>This book governs all public artefacts. Detail here supersedes Decision Record §3–4; strategy remains governed by the Decision Record; claims remain governed by the Claims Register.</li>
+      <li>Changes ship as versions (v1.1, v2.0) approved by both founders — never silent edits.</li>
+      <li>The Code phase consumes: the token table (§03) as <span class="mono">packages/design-system</span>, the doctrine (§08) verbatim in CLAUDE.md as hard constraints, and the receipt/stamp specs (§02, §06) as components.</li>
+      <li>Quarterly drift check: open the live site next to this book. Anything that would embarrass §08 gets fixed or the book gets versioned — one or the other.</li>
+    </ul>
+  </section>
+
+  <footer class="mono">IQ CREW BRAND BOOK v1.1 · EUCALYPT + THE STAMP · PREVIEW USES FONT CDNS FOR CONVENIENCE — PRODUCTION SELF-HOSTS · © IQ CREW PTY LTD 2026</footer>
+
+</div>
+</body>
+</html>

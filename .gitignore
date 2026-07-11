@@ -1,0 +1,16 @@
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Trashes
+.Spotlight-V100
+.fseventsd
+*.swp
+*.swo
+.sass-cache/
+.project
+.settings/
+.idea/
+.vscode/
